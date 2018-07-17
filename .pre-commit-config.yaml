@@ -13,6 +13,7 @@ repos:
         language: system
         files: \.ex$
     -   id: mix-test
+        verbose: true
         name: 'elixir: test'
         entry: make test-ci
         always_run: true
