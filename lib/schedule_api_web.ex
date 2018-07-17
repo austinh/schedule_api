@@ -37,6 +37,7 @@ defmodule ScheduleApiWeb do
 
       import ScheduleApiWeb.Router.Helpers
       import ScheduleApiWeb.ErrorHelpers
+
       import ScheduleApiWeb.Gettext
     end
   end
