@@ -39,6 +39,10 @@ defmodule ScheduleApiWeb do
       import ScheduleApiWeb.ErrorHelpers
 
       import ScheduleApiWeb.Gettext
+
+      IO.puts(
+        "dafdjsfklsfjdfk dafkljfkdsfjkdslafjdslkfjdsklfdksljfsad klfjdslkfjdsakflajsd fkldsj kldsfj adsklfjdasklfj dasklfdjkljf"
+      )
     end
   end
 
