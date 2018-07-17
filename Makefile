@@ -52,7 +52,7 @@ shell: ## Open a shell in the web container
 
 .PHONY: repl
 repl:
-	@docker-compose exec web iex
+	@docker-compose exec web iex $(filter-out $@,$(MAKECMDGOALS))
 
 lint:
 	@docker exec $(WEB_CONTAINER) mix format $(filter-out $@,$(MAKECMDGOALS))

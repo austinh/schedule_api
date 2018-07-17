@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: mix phx.server
+    command: iex -S mix phx.server
     env_file:
       - .env
     volumes:
