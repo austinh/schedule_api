@@ -47,6 +47,7 @@ endif
 
 .PHONY: test
 test: ## Execute PHPUnit tests
+	echo $(TEST_ARGS)
 	@docker-compose exec web mix test $(TEST_ARGS)
 
 .PHONY: test-ci
