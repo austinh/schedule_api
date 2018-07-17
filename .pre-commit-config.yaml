@@ -2,12 +2,12 @@
     hooks:
     -   id: mix-test
         name: 'elixir: mixing tests'
-        entry: mix test
+        entry: make test
         language: system
         files: \.ex$
-    -   id: mix-test
+    -   id: mix-compile
         name: 'elixir: mixing compile'
-        entry: mix compile
+        entry: make compile
         language: system
         files: \.ex$
 -   repo: git://github.com/pre-commit/pre-commit-hooks
