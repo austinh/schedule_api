@@ -15,6 +15,7 @@ defmodule ScheduleApiWeb do
   Do NOT define functions inside the quoted expressions
   below. Instead, define any helper function in modules
   and import those modules here.
+  asdfasd
   """
 
   def controller do
