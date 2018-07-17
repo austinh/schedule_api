@@ -15,5 +15,5 @@ config :schedule_api, ScheduleApi.Repo,
   username: "postgres",
   password: "postgres",
   database: "schedule_api_test",
-  hostname: "localhost",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
