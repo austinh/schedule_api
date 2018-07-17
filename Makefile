@@ -2,29 +2,29 @@
 build: ## Build docker containers
 	@docker-compose build
 
-.PHONY: setup
-setup: ## Setup all
+.PHONY: new
+new: ## Setup all
 	@cp -n .env.example .env || true
 	@docker-compose up -d web
 	@make update
-	@make create-db
-	@make migrate
+	@make db-create
+	@make db-migrate
 
 .PHONY: update
 update: # Update dependencies
 	@docker-compose exec web mix deps.get
 
-.PHONY: create-db
-create-db: ## Create database
+.PHONY: db-create
+db-create: ## Create database
 	@docker-compose exec web mix ecto.create
 
-.PHONY: migrate
-migrate: ## Migrate database
+.PHONY: db-migrate
+db-migrate: ## Migrate database
 	@docker-compose exec web mix ecto.migrate
 
 .PHONY: up
 up: ## Create and start containers
-	@docker-compose up -d
+	@docker-compose up
 
 .PHONY: down
 down: ## Stop and remove containers and networks
