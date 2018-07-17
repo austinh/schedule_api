@@ -5,7 +5,7 @@ build: ## Build docker containers
 .PHONY: new
 new: ## Setup all
 	cp -n .env.example .env || true
-	curl https://pre-commit.com/install-local.py | python -
+	pip install pre-commit
 	docker-compose up -d web
 	make update
 	make dialyzer

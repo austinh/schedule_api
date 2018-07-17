@@ -1,13 +1,23 @@
 -   repo: local
     hooks:
-    -   id: mix-test
-        name: 'elixir: mixing tests'
-        entry: make test
+    -   id: mix-compile
+        name: 'elixir: compile'
+        entry: make compile
         language: system
         files: \.ex$
-    -   id: mix-compile
-        name: 'elixir: mixing compile'
-        entry: make compile
+    -   id: mix-dialyzer
+        name: 'elixir: dialyzer'
+        entry: make dialyzer
+        language: system
+        files: \.ex$
+    -   id: mix-lint
+        name: 'elixir: lint'
+        entry: make lint
+        language: system
+        files: \.ex$
+    -   id: mix-test
+        name: 'elixir: test'
+        entry: make test
         language: system
         files: \.ex$
 -   repo: git://github.com/pre-commit/pre-commit-hooks
