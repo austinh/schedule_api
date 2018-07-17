@@ -38,21 +38,13 @@ up: ## Create and start containers
 down: ## Stop and remove containers and networks
 	@docker-compose down
 
-ifeq (test,$(firstword $(MAKECMDGOALS)))
-  # use the rest as arguments for "test"
-  TEST_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-  # ...and turn them into do-nothing targets
-  $(eval $(TEST_ARGS):;@:)
-endif
-
 .PHONY: test
 test: ## Execute PHPUnit tests
-	echo $(TEST_ARGS)
-	@docker-compose exec web mix test $(TEST_ARGS)
+	@docker-compose exec web mix test $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: test-ci
 test-ci:
-	@docker exec -t $(WEB_CONTAINER) mix test
+	@docker exec -t $(WEB_CONTAINER) mix test $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: shell
 shell: ## Open a shell in the web container
@@ -63,8 +55,12 @@ repl:
 	@docker-compose exec web iex
 
 lint:
-	@docker exec -t $(WEB_CONTAINER) mix do format, credo
+	@docker exec -t $(WEB_CONTAINER) mix do format, credo $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: dialyzer
 dialyzer:
 	@docker-compose exec -T web mix dialyzer --halt-exit-status
+
+# this is a hack to allow us to pass args to make targets
+%:
+	@:
