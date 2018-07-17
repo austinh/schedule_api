@@ -1,18 +1,20 @@
+fail_fast: false
+repos:
 -   repo: local
     hooks:
-    -   id: mix-dialyzer
-        name: 'elixir: dialyzer'
-        entry: make dialyzer
-        language: system
-        files: \.ex$
     -   id: mix-lint
         name: 'elixir: lint'
         entry: make lint
         language: system
         files: \.ex$
+    -   id: mix-dialyzer
+        name: 'elixir: dialyzer'
+        entry: make dialyzer
+        language: system
+        files: \.ex$
     -   id: mix-test
         name: 'elixir: test'
-        entry: make test
+        entry: make test-ci
         language: system
         files: \.ex$
 -   repo: git://github.com/pre-commit/pre-commit-hooks
