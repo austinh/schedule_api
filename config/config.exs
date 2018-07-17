@@ -14,8 +14,7 @@ config :schedule_api, ScheduleApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "srctG+fHyqnpav6e53Q6wlFsfz+3sggOm0xHPRUHzeez+MTLcNpS7e+QXFaoi1m1",
   render_errors: [view: ScheduleApiWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: ScheduleApi.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: ScheduleApi.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,4 +23,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
