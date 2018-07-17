@@ -11,7 +11,7 @@ defmodule ScheduleApi.Application do
       # Start the Ecto repository
       supervisor(ScheduleApi.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(ScheduleApiWeb.Endpoint, []),
+      supervisor(ScheduleApiWeb.Endpoint, [])
       # Start your own worker by calling: ScheduleApi.Worker.start_link(arg1, arg2, arg3)
       # worker(ScheduleApi.Worker, [arg1, arg2, arg3]),
     ]

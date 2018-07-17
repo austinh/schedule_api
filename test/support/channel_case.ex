@@ -25,13 +25,13 @@ defmodule ScheduleApiWeb.ChannelCase do
     end
   end
 
-
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(ScheduleApi.Repo)
+
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(ScheduleApi.Repo, {:shared, self()})
     end
+
     :ok
   end
-
 end
