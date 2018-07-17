@@ -55,7 +55,8 @@ repl:
 	@docker-compose exec web iex
 
 lint:
-	@docker exec -t $(WEB_CONTAINER) mix do format $(filter-out $@,$(MAKECMDGOALS)), credo --strict $(filter-out $@,$(MAKECMDGOALS))
+	@docker exec $(WEB_CONTAINER) mix format $(filter-out $@,$(MAKECMDGOALS))
+	@docker exec -t $(WEB_CONTAINER) mix credo --strict $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: dialyzer
 dialyzer:

@@ -6,19 +6,20 @@ repos:
         name: 'elixir: lint'
         entry: make lint
         language: system
-        files: \.ex$
+        files: \.exs?$
     -   id: mix-dialyzer
         name: 'elixir: dialyzer'
         entry: make dialyzer
         language: system
-        files: \.ex$
+        pass_filenames: false
+        files: \.exs?$
     -   id: mix-test
         verbose: true
         name: 'elixir: test'
         entry: make test-ci
-        always_run: true
         language: system
-        files: \.ex$
+        pass_filenames: false
+        files: \.exs?$
 -   repo: git://github.com/pre-commit/pre-commit-hooks
     sha: master
     hooks:
