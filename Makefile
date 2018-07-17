@@ -62,7 +62,7 @@ repl:
 	@docker-compose exec web iex
 
 lint:
-	@docker exec -t $(WEB_CONTAINER) mix do format, credo --strict
+	@docker exec -t $(WEB_CONTAINER) mix do format, credo
 
 .PHONY: dialyzer
 dialyzer:

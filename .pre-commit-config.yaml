@@ -15,6 +15,7 @@ repos:
     -   id: mix-test
         name: 'elixir: test'
         entry: make test-ci
+        always_run: true
         language: system
         files: \.ex$
 -   repo: git://github.com/pre-commit/pre-commit-hooks
