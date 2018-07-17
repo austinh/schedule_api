@@ -8,6 +8,5 @@ defmodule ScheduleApi do
   """
 
   def whatever do
-    'this is sooooo strange'
   end
 end
