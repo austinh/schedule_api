@@ -36,7 +36,7 @@ test: ## Execute PHPUnit tests
 
 .PHONY: shell
 shell: ## Open a shell in the web container
-	@docker-compose exec web bash
+	@docker-compose exec web sh
 
 .PHONY: repl
 repl:

@@ -1,5 +1,5 @@
-defmodule ScheduleApi.PageController do
-  use ScheduleApi, :controller
+defmodule ScheduleApiWeb.PageController do
+  use ScheduleApiWeb, :controller
 
   def index(conn, _params) do
     text conn, "Welcome to the WeWork Schedule API."
